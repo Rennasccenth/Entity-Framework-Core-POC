@@ -8,27 +8,48 @@ namespace EF_Core_POC.Data
 {
     public class RunAwayFromSerasaDbContext : DbContext
     {
+        private readonly IConfiguration _configuration;
         public DbSet<Account> Accounts { get; set; }
         public DbSet<Transaction> Transactions { get; set; }
 
-        public RunAwayFromSerasaDbContext(RunAwayFromSerasaSettings settings)
+        public RunAwayFromSerasaDbContext(IConfiguration configuration)
         {
-            _settings = settings;
+            _configuration = configuration;
         }
-        
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            var basePath = AppDomain.CurrentDomain.BaseDirectory;
-            
-            var envName = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
+            var mySqlStringConnection = _configuration.GetConnectionString("MySqlConnection");
 
-            var configurationRoot = new ConfigurationBuilder()
-                .SetBasePath(basePath)
-                .AddJsonFile("appsettings.json")
-                .AddJsonFile($"appsettings.{envName}.json")
-                .Build();
+            optionsBuilder.UseMySQL(mySqlStringConnection);
+        }
 
-            optionsBuilder.UseMySQL("server=localhost");
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<Account>(entity =>
+            {
+                entity.HasKey(e => e.Guid);
+                entity.Property(e => e.Owner)
+                    .IsRequired();
+                entity.Property(e => e.Balance)
+                    .HasDefaultValue(0);
+            });
+
+            modelBuilder.Entity<Transaction>(entity =>
+            {
+                entity.HasKey(e => e.Guid);
+                entity.Property(e => e.Amount)
+                    .IsRequired();
+                entity.Property(e => e.Type)
+                    .IsRequired();
+                entity.Property(e => e.IsPlanned);
+                
+                // One to Many Relationship
+                entity.HasOne(trans => trans.Account)
+                    .WithMany(acc => acc.Transactions);
+            });
         }
     }
 }
