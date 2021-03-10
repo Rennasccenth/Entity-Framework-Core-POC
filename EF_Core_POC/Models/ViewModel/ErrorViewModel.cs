@@ -1,6 +1,4 @@
-using System;
-
-namespace EF_Core_POC.Models
+namespace EF_Core_POC.Models.ViewModel
 {
     public class ErrorViewModel
     {
