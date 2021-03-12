@@ -1,8 +1,10 @@
 using System;
+using System.ComponentModel.DataAnnotations.Schema;
 using EF_Core_POC.Models.Enums;
 
 namespace EF_Core_POC.Models.Entity
 {
+    [Table("Transactions")]
     public class Transaction : BaseEntity
     {
         public Guid AccountId { get; set; }
