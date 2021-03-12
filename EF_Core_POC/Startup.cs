@@ -39,7 +39,13 @@ namespace EF_Core_POC
 
             services.AddSingleton(Configuration.Get<RunAwayFromSerasaSettings>());
             
-            services.AddDbContext<RunAwayFromSerasaContext>();
+            // services.AddDbContext<RunAwayFromSerasaContext>();
+            
+            // https://docs.microsoft.com/en-us/ef/core/what-is-new/ef-core-2.0/#dbcontext-pooling
+            services.AddDbContextPool<RunAwayFromSerasaContext>(options =>
+            {
+                options.UseMySQL(Configuration.GetConnectionString("DefaultConnection"));
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
