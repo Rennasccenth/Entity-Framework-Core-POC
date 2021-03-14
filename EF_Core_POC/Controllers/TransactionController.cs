@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Routing;
 
 namespace EF_Core_POC.Controllers
 {
-    [Route("Account")]
+    [Route("Transaction")]
     public class TransactionController : Controller
     {
         [HttpGet]
