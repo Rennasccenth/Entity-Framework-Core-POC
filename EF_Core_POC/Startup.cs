@@ -1,15 +1,9 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using EF_Core_POC.Configurations;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.UI;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.EntityFrameworkCore;
 using EF_Core_POC.Data;
-using EF_Core_POC.Settings;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -37,10 +31,11 @@ namespace EF_Core_POC
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews();
 
-            services.AddSingleton(Configuration.Get<RunAwayFromSerasaSettings>());
-            
-            services.AddDbContext<RunAwayFromSerasaContext>();
-            
+            services.ConfigureContextDatabase();
+            services.ConfigureSingletons();
+            services.ConfigureScoped();
+            services.ConfigureTransient();
+
             // https://docs.microsoft.com/en-us/ef/core/what-is-new/ef-core-2.0/#dbcontext-pooling
             // services.AddDbContextPool<RunAwayFromSerasaContext>(options =>
             // {
