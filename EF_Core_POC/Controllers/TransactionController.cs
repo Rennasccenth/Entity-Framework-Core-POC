@@ -1,8 +1,6 @@
 using EF_Core_POC.Data;
 using EF_Core_POC.Settings;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.Logging;
 
 namespace EF_Core_POC.Controllers
@@ -12,7 +10,7 @@ namespace EF_Core_POC.Controllers
     {
         #region Constructor
 
-        public TransactionController(ILogger logger, RunAwayFromSerasaContext context,
+        public TransactionController(ILogger<TransactionController> logger, RunAwayFromSerasaContext context,
             RunAwayFromSerasaSettings settings)
             : base(logger, context, settings)
         {

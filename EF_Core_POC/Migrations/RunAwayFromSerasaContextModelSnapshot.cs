@@ -3,7 +3,6 @@ using System;
 using EF_Core_POC.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace EF_Core_POC.Migrations
 {

@@ -1,6 +1,4 @@
-using System;
 using EF_Core_POC.Models.Entity;
-using EF_Core_POC.Settings;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 

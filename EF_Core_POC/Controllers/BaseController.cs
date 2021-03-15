@@ -8,13 +8,13 @@ namespace EF_Core_POC.Controllers
 {
     public class BaseController : Controller
     {
-        protected readonly ILogger _logger;
+        protected readonly ILogger<BaseController> _logger;
         protected ISession Session => HttpContext.Session;
         protected readonly RunAwayFromSerasaContext _context;
         protected readonly RunAwayFromSerasaSettings _settings ;
         
         
-        public BaseController(ILogger logger,
+        public BaseController(ILogger<BaseController> logger,
             RunAwayFromSerasaContext context,
             RunAwayFromSerasaSettings settings
         )
