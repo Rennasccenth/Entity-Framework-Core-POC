@@ -1,2 +1,2 @@
 # Entity-Framework-Core-POC
-POC of EF Core on .NET 5
+POC of Entity Framework Core on .NET 5
