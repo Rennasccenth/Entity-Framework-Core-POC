@@ -12,11 +12,6 @@ namespace EF_Core_POC.AppService
             throw new NotImplementedException();
         }
 
-        public IQueryable<Account> GetAll(Account entity)
-        {
-            throw new NotImplementedException();
-        }
-
         public Guid Add(Account entity)
         {
             throw new NotImplementedException();

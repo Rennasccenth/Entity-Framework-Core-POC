@@ -1,7 +1,8 @@
 using System;
+using EF_Core_POC.AppService.Interfaces;
 using EF_Core_POC.Models.Entity;
 
-namespace EF_Core_POC.AppService.Interfaces
+namespace EF_Core_POC.AppService
 {
     public class TransactionAppService : ITransactionAppService
     {
