@@ -1,4 +1,4 @@
-namespace EF_Core_POC.Models.Enums
+namespace Domain.Enums
 {
     public enum Related
     {
