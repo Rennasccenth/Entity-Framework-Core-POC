@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using System.Reflection;
 using EF_Core_POC.AppService.Interfaces;
 using EF_Core_POC.Data;
 using EF_Core_POC.Models.Entity;
@@ -11,18 +12,20 @@ using Newtonsoft.Json;
 
 namespace EF_Core_POC.Controllers
 {
-    // TODO: ADD Fluent Validation
     [Route("Account")]
-    public class AccountController : BaseController
+    public class AccountController : Controller
     {
         private ITransactionAppService _appService;
+        private RunAwayFromSerasaContext _dbContext;
+        private readonly ILogger<AccountController> _logger;
 
         #region Constructor
 
-        public AccountController(ILogger<AccountController> logger, RunAwayFromSerasaContext context,
-            RunAwayFromSerasaSettings settings, ITransactionAppService transactionAppService)
-            : base(logger, context, settings)
+        public AccountController(ILogger<AccountController> logger, RunAwayFromSerasaContext dbContext,
+            ITransactionAppService transactionAppService)
         {
+            _logger = logger;
+            _dbContext = dbContext;
             _appService = transactionAppService;
         }
 
@@ -33,19 +36,19 @@ namespace EF_Core_POC.Controllers
         {
             _logger.Log(LogLevel.Trace, "Begin: Account/Index");
 
-
+            
             
             _logger.Log(LogLevel.Trace, "End: Account/Index");
             return Ok();
         }
 
-        [HttpGet]
+        [HttpPut]
         [Route("Create")]
         public IActionResult Create(string name)
         {
             _logger.Log(LogLevel.Trace, "Begin: Account/Create");
             
-
+            
 
             _logger.Log(LogLevel.Trace, "End: Account/Create");
             return Ok();
@@ -57,7 +60,7 @@ namespace EF_Core_POC.Controllers
         {
             _logger.Log(LogLevel.Trace, "Begin: Account/Update");
 
-
+            
             
             _logger.Log(LogLevel.Trace, "End: Account/Update");
             return Ok();

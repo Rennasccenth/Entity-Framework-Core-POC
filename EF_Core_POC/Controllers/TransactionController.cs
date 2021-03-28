@@ -6,14 +6,17 @@ using Microsoft.Extensions.Logging;
 namespace EF_Core_POC.Controllers
 {
     [Route("Transaction")]
-    public class TransactionController : BaseController
+    public class TransactionController : Controller
     {
-        #region Constructor
+        private ILogger<TransactionController> _logger;
+        private RunAwayFromSerasaContext _dbContext;
 
-        public TransactionController(ILogger<TransactionController> logger, RunAwayFromSerasaContext context,
-            RunAwayFromSerasaSettings settings)
-            : base(logger, context, settings)
+        #region Constructor
+    
+        public TransactionController(ILogger<TransactionController> logger, RunAwayFromSerasaContext dbContext)
         {
+            _logger = logger;
+            _dbContext = dbContext;
         }
 
         #endregion

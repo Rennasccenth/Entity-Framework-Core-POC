@@ -18,7 +18,6 @@ namespace EF_Core_POC.Configurations
         public static IServiceCollection ConfigureSingletons(this IServiceCollection serviceCollection)
         {
             serviceCollection.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-            serviceCollection.AddSingleton(new RunAwayFromSerasaSettings());
             
             return serviceCollection;
         }
