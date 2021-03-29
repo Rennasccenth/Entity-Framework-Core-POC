@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 
-namespace Nullnes.EF_Core_POC.Application
+namespace Nullnes.EF_Core_POC.Web
 {
     public class Program
     {

@@ -8,7 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Nullnes.EF_Core_POC.Application.Configurations;
 
-namespace EF_Core_POC.Web
+namespace Nullnes.EF_Core_POC.Web
 {
     public class Startup
     {
