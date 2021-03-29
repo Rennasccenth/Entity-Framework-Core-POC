@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+        <RootNamespace>Infra</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Core\EF_Core_POC.1.Domain\EF_Core_POC.1.Domain.csproj" />
+      <ProjectReference Include="Infra.CrossCuting\Infra.CrossCuting.csproj" />
+      <ProjectReference Include="Infra.IoC\Infra.IoC.csproj" />
+    </ItemGroup>
+
+</Project>
