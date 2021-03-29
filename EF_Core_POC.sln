@@ -2,7 +2,7 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EF_Core_POC.4.Web", "EF_Core_POC.4.Web\EF_Core_POC.4.Web.csproj", "{7ADB4FDB-3372-40A9-A278-180CB19C92ED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EF_Core_POC.1.Domain", "Core\EF_Core_POC.1.Domain\EF_Core_POC.1.Domain.csproj", "{3E6E72E8-F687-448E-B4B2-CFC27FFFF301}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EF_Core_POC.1.Domain", "EF_Core_POC.1.Domain\EF_Core_POC.1.Domain.csproj", "{3E6E72E8-F687-448E-B4B2-CFC27FFFF301}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EF_Core_POC.2.Infra", "EF_Core_POC.2.Infra\EF_Core_POC.2.Infra.csproj", "{CB9C4C09-6FE1-4FAE-A939-494382815974}"
 EndProject

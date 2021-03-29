@@ -2,7 +2,7 @@
 
     <PropertyGroup>
         <TargetFramework>net5.0</TargetFramework>
-        <RootNamespace>Services</RootNamespace>
+        <RootNamespace>EF_Core_POC.3.Application</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>

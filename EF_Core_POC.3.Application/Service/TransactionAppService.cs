@@ -1,8 +1,8 @@
 using System;
-using WebApplication.AppService.Interfaces;
-using WebApplication.Models.Entity;
+using Nullnes.EF_Core_POC.Application.Service.Interfaces;
+using Nullnes.EF_Core_POC.Domain.Entities;
 
-namespace WebApplication.AppService
+namespace Nullnes.EF_Core_POC.Application.Service
 {
     public class TransactionAppService : ITransactionAppService
     {
@@ -16,12 +16,12 @@ namespace WebApplication.AppService
             throw new NotImplementedException();
         }
 
-        public Transaction? Update(Transaction entity)
+        public Transaction Update(Transaction entity)
         {
             throw new NotImplementedException();
         }
 
-        public Transaction? Remove(Transaction entity)
+        public Transaction Remove(Transaction entity)
         {
             throw new NotImplementedException();
         }

@@ -1,18 +1,17 @@
-using Infra.Data;
-using WebApplication.Settings;
+using Nullnes.EF_Core_POC.Infra.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
-namespace WebApplication.Controllers
+namespace Nullnes.EF_Core_POC.Application.Controllers
 {
     [Route("Transaction")]
     public class TransactionController : Controller
     {
-        private ILogger<TransactionController> _logger;
         private RunAwayFromSerasaContext _dbContext;
+        private readonly ILogger<TransactionController> _logger;
 
         #region Constructor
-    
+
         public TransactionController(ILogger<TransactionController> logger, RunAwayFromSerasaContext dbContext)
         {
             _logger = logger;

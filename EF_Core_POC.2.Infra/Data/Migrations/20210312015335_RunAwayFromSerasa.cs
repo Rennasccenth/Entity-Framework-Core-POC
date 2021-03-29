@@ -1,65 +1,62 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace WebApplication.Migrations
+namespace Nullnes.EF_Core_POC.Infra.Data.Migrations
 {
     public partial class RunAwayFromSerasa : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Accounts",
-                columns: table => new
+                "Accounts",
+                table => new
                 {
-                    Guid = table.Column<byte[]>(type: "varbinary(16)", nullable: false),
-                    Owner = table.Column<string>(type: "text", nullable: false),
-                    Balance = table.Column<long>(type: "bigint", nullable: false, defaultValue: 0L),
-                    CreatedAt = table.Column<DateTime>(type: "datetime", nullable: false),
-                    UpdatedAt = table.Column<DateTime>(type: "datetime", nullable: false),
-                    Deleted = table.Column<bool>(type: "tinyint(1)", nullable: false)
+                    Guid = table.Column<byte[]>("varbinary(16)", nullable: false),
+                    Owner = table.Column<string>("text", nullable: false),
+                    Balance = table.Column<long>("bigint", nullable: false, defaultValue: 0L),
+                    CreatedAt = table.Column<DateTime>("datetime", nullable: false),
+                    UpdatedAt = table.Column<DateTime>("datetime", nullable: false),
+                    Deleted = table.Column<bool>("tinyint(1)", nullable: false)
                 },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Accounts", x => x.Guid);
-                });
+                constraints: table => { table.PrimaryKey("PK_Accounts", x => x.Guid); });
 
             migrationBuilder.CreateTable(
-                name: "Transactions",
-                columns: table => new
+                "Transactions",
+                table => new
                 {
-                    Guid = table.Column<byte[]>(type: "varbinary(16)", nullable: false),
-                    AccountId = table.Column<byte[]>(type: "varbinary(16)", nullable: false),
-                    Amount = table.Column<long>(type: "bigint", nullable: false),
-                    Type = table.Column<int>(type: "int", nullable: false),
-                    IsPlanned = table.Column<bool>(type: "tinyint(1)", nullable: true),
-                    CreatedAt = table.Column<DateTime>(type: "datetime", nullable: false),
-                    UpdatedAt = table.Column<DateTime>(type: "datetime", nullable: false),
-                    Deleted = table.Column<bool>(type: "tinyint(1)", nullable: false)
+                    Guid = table.Column<byte[]>("varbinary(16)", nullable: false),
+                    AccountId = table.Column<byte[]>("varbinary(16)", nullable: false),
+                    Amount = table.Column<long>("bigint", nullable: false),
+                    Type = table.Column<int>("int", nullable: false),
+                    IsPlanned = table.Column<bool>("tinyint(1)", nullable: true),
+                    CreatedAt = table.Column<DateTime>("datetime", nullable: false),
+                    UpdatedAt = table.Column<DateTime>("datetime", nullable: false),
+                    Deleted = table.Column<bool>("tinyint(1)", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Transactions", x => x.Guid);
                     table.ForeignKey(
-                        name: "FK_Transactions_Accounts_AccountId",
-                        column: x => x.AccountId,
-                        principalTable: "Accounts",
-                        principalColumn: "Guid",
+                        "FK_Transactions_Accounts_AccountId",
+                        x => x.AccountId,
+                        "Accounts",
+                        "Guid",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Transactions_AccountId",
-                table: "Transactions",
-                column: "AccountId");
+                "IX_Transactions_AccountId",
+                "Transactions",
+                "AccountId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Transactions");
+                "Transactions");
 
             migrationBuilder.DropTable(
-                name: "Accounts");
+                "Accounts");
         }
     }
 }

@@ -1,22 +1,16 @@
-using System;
-using System.Linq;
-using System.Reflection;
-using Infra.Data;
-using WebApplication.Settings;
+using Nullnes.EF_Core_POC.Infra.Data;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
-using Newtonsoft.Json;
-using WebApplication.AppService.Interfaces;
+using Nullnes.EF_Core_POC.Application.Service.Interfaces;
 
-namespace WebApplication.Controllers
+namespace Nullnes.EF_Core_POC.Application.Controllers
 {
     [Route("Account")]
     public class AccountController : Controller
     {
+        private readonly ILogger<AccountController> _logger;
         private ITransactionAppService _appService;
         private RunAwayFromSerasaContext _dbContext;
-        private readonly ILogger<AccountController> _logger;
 
         #region Constructor
 
@@ -35,8 +29,7 @@ namespace WebApplication.Controllers
         {
             _logger.Log(LogLevel.Trace, "Begin: Account/Index");
 
-            
-            
+
             _logger.Log(LogLevel.Trace, "End: Account/Index");
             return Ok();
         }
@@ -46,8 +39,7 @@ namespace WebApplication.Controllers
         public IActionResult Create(string name)
         {
             _logger.Log(LogLevel.Trace, "Begin: Account/Create");
-            
-            
+
 
             _logger.Log(LogLevel.Trace, "End: Account/Create");
             return Ok();
@@ -59,8 +51,7 @@ namespace WebApplication.Controllers
         {
             _logger.Log(LogLevel.Trace, "Begin: Account/Update");
 
-            
-            
+
             _logger.Log(LogLevel.Trace, "End: Account/Update");
             return Ok();
         }
@@ -72,7 +63,6 @@ namespace WebApplication.Controllers
             _logger.Log(LogLevel.Trace, "Begin: Account/Remove");
 
 
-            
             _logger.Log(LogLevel.Trace, "End: Account/Remove");
             return Ok();
         }

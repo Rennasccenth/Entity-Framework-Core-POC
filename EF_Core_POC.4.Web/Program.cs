@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 
-namespace WebApplication
+namespace Nullnes.EF_Core_POC.Application
 {
     public class Program
     {
@@ -10,12 +10,14 @@ namespace WebApplication
             CreateHostBuilder(args).Build().Run();
         }
 
-        public static IHostBuilder CreateHostBuilder(string[] args) =>
-            Host.CreateDefaultBuilder(args)
+        public static IHostBuilder CreateHostBuilder(string[] args)
+        {
+            return Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseUrls("http://localhost:5010");
                     webBuilder.UseStartup<Startup>();
                 });
+        }
     }
 }

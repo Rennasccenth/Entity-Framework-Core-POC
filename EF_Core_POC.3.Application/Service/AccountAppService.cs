@@ -1,9 +1,8 @@
 using System;
-using System.Linq;
-using WebApplication.AppService.Interfaces;
-using WebApplication.Models.Entity;
+using Nullnes.EF_Core_POC.Application.Service.Interfaces;
+using Nullnes.EF_Core_POC.Domain.Entities;
 
-namespace WebApplication.AppService
+namespace Nullnes.EF_Core_POC.Application.Service
 {
     public class AccountAppService : IAccountAppService
     {
@@ -17,12 +16,12 @@ namespace WebApplication.AppService
             throw new NotImplementedException();
         }
 
-        public Account? Update(Account entity)
+        public Account Update(Account entity)
         {
             throw new NotImplementedException();
         }
 
-        public Account? Remove(Account entity)
+        public Account Remove(Account entity)
         {
             throw new NotImplementedException();
         }

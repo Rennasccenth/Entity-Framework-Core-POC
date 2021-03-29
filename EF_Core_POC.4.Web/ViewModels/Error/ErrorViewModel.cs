@@ -1,4 +1,4 @@
-namespace WebApplication.ViewModels.Error
+namespace Nullnes.EF_Core_POC.Application.ViewModels.Error
 {
     public class ErrorViewModel
     {
