@@ -1,0 +1,38 @@
+using WebApplication.Settings;
+using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.DependencyInjection;
+using WebApplication.AppService;
+using WebApplication.AppService.Interfaces;
+using WebApplication.Data;
+
+namespace WebApplication.Configurations
+{
+    public static class ConfigureStartup
+    {
+        public static IServiceCollection ConfigureContextDatabase(this IServiceCollection serviceCollection)
+        {
+            serviceCollection.AddDbContext<RunAwayFromSerasaContext>();
+            return serviceCollection;
+        }
+        
+        public static IServiceCollection ConfigureSingletons(this IServiceCollection serviceCollection)
+        {
+            serviceCollection.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            
+            return serviceCollection;
+        }
+        
+        public static IServiceCollection ConfigureScoped(this IServiceCollection serviceCollection)
+        {
+            serviceCollection.AddScoped<IAccountAppService, AccountAppService>();
+            serviceCollection.AddScoped<ITransactionAppService, TransactionAppService>();
+            
+            return serviceCollection;
+        }
+        
+        public static IServiceCollection ConfigureTransient(this IServiceCollection serviceCollection)
+        {
+            return serviceCollection;
+        }
+    }
+}
