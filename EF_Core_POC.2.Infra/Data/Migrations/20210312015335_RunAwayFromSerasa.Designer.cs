@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace Nullnes.EF_Core_POC.Infra.Data.Migrations
+namespace EF_Core_POC._2.Infra.Data.Migrations
 {
     [DbContext(typeof(RunAwayFromSerasaContext))]
     [Migration("20210312015335_RunAwayFromSerasa")]

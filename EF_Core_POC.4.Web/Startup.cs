@@ -1,4 +1,4 @@
-using Nullnes.EF_Core_POC.Infra.Data;
+using EF_Core_POC._2.Infra.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;

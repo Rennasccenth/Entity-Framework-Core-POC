@@ -1,8 +1,8 @@
-using Nullnes.EF_Core_POC.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using Nullnes.EF_Core_POC.Domain.Entities;
 
-namespace Nullnes.EF_Core_POC.Infra.Data
+namespace EF_Core_POC._2.Infra.Data
 {
     public class RunAwayFromSerasaContext : DbContext
     {

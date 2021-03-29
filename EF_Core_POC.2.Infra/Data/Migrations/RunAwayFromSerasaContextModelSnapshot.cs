@@ -4,7 +4,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 
-namespace Nullnes.EF_Core_POC.Infra.Data.Migrations
+namespace EF_Core_POC._2.Infra.Data.Migrations
 {
     [DbContext(typeof(RunAwayFromSerasaContext))]
     internal class RunAwayFromSerasaContextModelSnapshot : ModelSnapshot

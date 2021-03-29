@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace Nullnes.EF_Core_POC.Infra.Data.Migrations
+namespace EF_Core_POC._2.Infra.Data.Migrations
 {
     public partial class RunAwayFromSerasa : Migration
     {
